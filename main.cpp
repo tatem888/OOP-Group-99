@@ -18,8 +18,7 @@ int main(){
     int monsterHP = 100;
 
     // UI Varaibles Do not change
-
-    // Menu Choice
+    // Main Menu Choice
     int choice;
 
     // In game menu choice
@@ -107,7 +106,7 @@ int main(){
                         break;
                     }
 
-                    // Display damage dealt this turn and monster HP left.
+                    // Display damage dealt this turn and monster HP left
                     cout << "\n"<< playerName << " dealt " << damageTurn << " dmg to Monster." << endl;
                     cout << "\nMonster has " << tempMonsterHP << " HP left." << endl;
 
@@ -120,7 +119,7 @@ int main(){
                     // Monster Round
                     tempPlayerHP -= monsterATK;
                     
-                    // Display player HP left.
+                    // Display player HP left
                     cout << "\nPlayer has " << tempPlayerHP << " HP left." << endl;
 
                     //Lose condition
