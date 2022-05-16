@@ -24,9 +24,6 @@ int main(){
     // In game menu choice
     int abilityChoice;
 
-    // Breaks game when option 3 is chosen
-    bool gameBreak = false;
-
     // In-game player and monster HP
     int tempPlayerHP;
     int tempMonsterHP;
@@ -45,6 +42,9 @@ int main(){
         cout << "3. Start Game" << endl;
         cout << "4. Quit Game\n" << endl;
         cin >> choice;
+
+        // Breaks game when option 3 is chosen
+        bool gameBreak = false;
 
         // Runs different function base on user choice
         switch(choice){
@@ -73,8 +73,11 @@ int main(){
             case 3:
 
                 // Reset HP to set values
-                    tempPlayerHP = playerHP;
-                    tempMonsterHP = monsterHP;
+                tempPlayerHP = playerHP;
+                tempMonsterHP = monsterHP;
+
+                // Breaks game when option 3 is chosen
+                bool gameBreak = false;
 
                 // Start Game
                 while(true){
