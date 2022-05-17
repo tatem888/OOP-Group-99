@@ -36,8 +36,10 @@ int main(){
     // Breaks game when option 3 is chosen
     bool gameBreak = false;
 
+    // Delay time for next prompt
     int delayTime = 700000000;
 
+    // temporary solution to prevent infinite loop
     int count = 0;
     while(count<10){
 

@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// default values for player object
 Player::Player(){
     playerName = "Player";
     playerATK = 30;

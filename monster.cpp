@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+// default values for Monster object
 Monster::Monster(){
     monsterName = "Monster";
 };
