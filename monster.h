@@ -1,21 +1,17 @@
 #ifndef MONSTER_H
 #define MONSTER_H
-
-#include <iostream>
 #include "stats.h"
+#include <iostream>
 
-using namespace std;
-
-class Monster: public Stats{
+class Monster{
 
     public:
-    
-        string monsterName;
-
         //Initalises variables that will be inherited to child class
+        string monsterName;
         Monster();
         void setName();
         ~Monster();
+
 };
 
 #endif
