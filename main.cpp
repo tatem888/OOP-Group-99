@@ -38,7 +38,7 @@ int main(){
 
         // Startup Screen, allows input
         cout << "\nWelcome to <Game Title>\n" << endl;
-        cout << "Finish setting up both Player and Monster to start the game.\nIf not manually setup the program will use default stats.\n" << endl;
+        cout << "Program will use default stats,\nif Player or Monster are not manually setup.\n" << endl;
         cout << "1. Setup Player" << endl;
         cout << "2. Setup Monster" << endl;
         cout << "3. Start Game" << endl;
