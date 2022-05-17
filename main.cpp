@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <chrono>
+#include <thread>
 
 #include "player.h"
 #include "monster.h"
@@ -8,15 +10,12 @@ using namespace std;
 
 int main(){
 
+    // Creates a player and monster object
     Player p1;
     Monster m1;
 
     // Exmaple Varaibles (Need to be turned into class varaible)
     // Below are default values
-    string playerName = "Player";
-    int playerATK = 30;
-    int playerHP = 100;
-    int playerSpATK = 70;
     int monsterATK = 20;
     int monsterHP = 100;
 
@@ -37,8 +36,13 @@ int main(){
     // Breaks game when option 3 is chosen
     bool gameBreak = false;
 
+    int delayTime = 700000000;
+
     int count = 0;
     while(count<10){
+
+        // delay timer
+        this_thread::sleep_for(chrono::nanoseconds(delayTime));
 
         // Startup Screen, allows input
         cout << "\nWelcome to <Game Title>\n" << endl;
@@ -50,28 +54,23 @@ int main(){
         cin >> choice;
 
         // intput error check
-        /*if( choice < 1 || choice > 4){
+        if( choice < 1 || choice > 4){
             cout << "\nYou need to enter a corrent number." << std::endl;
-        }*/
+        }
 
         // Runs different function base on user choice
         switch(choice){
             case 1:
 
                 // Setup Player stats
-                cout << "\nPlayer Name:" << endl;
                 p1.setName();
-                cout << "\nPlayer ATK:" << endl;
-                cin >> playerATK;
-                cout << "\nPlayer speical ATK:" << endl;
-                cin >> playerSpATK;
-                cout << "\nPlayer HP:" << endl;
-                cin >> playerHP;
+                p1.setATK();
+                p1.setSpATK();
+                p1.setHP();
                 break;
 
             case 2:
                 // Setup Monster stats
-                cout << "\nMonster Name:" << endl;
                 m1.setName();
                 cout << "\nMonster ATK:" << endl;
                 cin >> monsterATK;
@@ -82,7 +81,7 @@ int main(){
             case 3:
 
                 // Reset HP to set values
-                tempPlayerHP = playerHP;
+                tempPlayerHP = p1.playerHP;
                 tempMonsterHP = monsterHP;
 
                 // Resets gameBreak
@@ -106,12 +105,12 @@ int main(){
                     // Deal damage or end game
                     switch(abilityChoice){
                         case 1:
-                            tempMonsterHP -= playerATK;
-                            damageTurn = playerATK;
+                            tempMonsterHP -= p1.playerATK;
+                            damageTurn = p1.playerATK;
                             break;
                         case 2:
-                            tempMonsterHP -= playerSpATK;
-                            damageTurn = playerSpATK;
+                            tempMonsterHP -= p1.playerSpATK;
+                            damageTurn = p1.playerSpATK;
                             break;
                         case 3:
                             gameBreak = true;
@@ -125,24 +124,34 @@ int main(){
 
 
                     // Display damage dealt this turn and monster HP left
-                    cout << "\n"<< playerName << " dealt " << damageTurn << " dmg to Monster." << endl;
-                    cout << "\nMonster has " << tempMonsterHP << " HP left." << endl;
+                    this_thread::sleep_for(chrono::nanoseconds(delayTime));
+                    cout << "\n"<< p1.playerName << " dealt " << damageTurn << " dmg to Monster." << endl;
+
+                    this_thread::sleep_for(chrono::nanoseconds(delayTime));
+                    cout << "\n" << m1.monsterName << " has " << tempMonsterHP << " HP left." << endl;
+                    
+                    this_thread::sleep_for(chrono::nanoseconds(delayTime));
 
                     // Win condition
                     if (tempMonsterHP <= 0){
-                        cout << "\n" << playerName <<" have won!" << endl;
+                        cout << "\n" << p1.playerName <<" have won!" << endl;
                         break;
                     }
                     
                     // Monster Round
                     tempPlayerHP -= monsterATK;
                     
-                    // Display player HP left
-                    cout << "\nPlayer has " << tempPlayerHP << " HP left." << endl;
+                    // Monster Attacked damage
+                    cout << "\n" << m1.monsterName << " dealt " << monsterATK << " damage to " << p1.playerName <<" ." << endl;
 
+                    this_thread::sleep_for(chrono::nanoseconds(delayTime));
+                    // Display player HP left
+                    cout << "\n" << p1.playerName << " has " << tempPlayerHP << " HP left." << endl;
+
+                    this_thread::sleep_for(chrono::nanoseconds(delayTime));
                     //Lose condition
                     if (tempPlayerHP <= 0){
-                        cout << "\n" << playerName <<" have lost." << endl;
+                        cout << "\n" << p1.playerName <<" have lost." << endl;
                         break;
                     }
                     damageTurn = 0;

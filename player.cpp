@@ -5,8 +5,12 @@
 
 using namespace std;
 
-Player::Player(){}
-
+Player::Player(){
+    playerName = "Player";
+    playerATK = 30;
+    playerSpATK = 60;
+    playerHP = 100;
+}
 
 //function that is called upon for the user to set a name for the player
 void Player::setName(){
@@ -17,7 +21,7 @@ void Player::setName(){
 
 //function that is called upon to sets the damage a normal ATK will do
 void Player::setATK(){
-    cout << "enter " << name << "'s attack power: ";
+    cout << "Enter " << playerName << "'s attack power: ";
     cin >> playerATK;
 
     //Add while loop to check for correct input
@@ -26,7 +30,7 @@ void Player::setATK(){
 
 //function that is called upon to sets the damage a normal ATK will do
 void Player::setSpATK(){
-    cout << "enter " << name << "'s Special Attack power: ";
+    cout << "enter " << playerName << "'s Special Attack power: ";
     cin >> playerSpATK;
 
     //Add while loop to check for correct input
@@ -35,7 +39,7 @@ void Player::setSpATK(){
 
 //function that is called upon to sets the damage a normal ATK will do
 void Player::setHP(){
-    cout << "enter " << playerHP << "'s HP: ";
+    cout << "enter " << playerName << "'s HP: ";
     cin >> playerHP;
 
     //Add while loop to check for correct input

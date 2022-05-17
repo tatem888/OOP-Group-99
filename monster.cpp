@@ -7,12 +7,12 @@ using namespace std;
 
 
 Monster::Monster(){
-
+    monsterName = "Monster";
 };
 
 //Function that is called upon to set the monster name
 void Monster::setName(){
-    cout << "enter the monster's name: ";
+    cout << "Enter the monster's name: ";
     cin >> monsterName;
 };
 

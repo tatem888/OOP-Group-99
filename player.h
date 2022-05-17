@@ -14,8 +14,8 @@ class Player: public Stats{
         //initialises variables to be used in player class
         string playerName;
         int playerATK;
-        int playerHP;
         int playerSpATK;
+        int playerHP;
 
         //initialies functions that will be used in the player class
         Player();

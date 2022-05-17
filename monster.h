@@ -8,6 +8,7 @@ class Monster{
     public:
         //Initalises variables that will be inherited to child class
         string monsterName;
+        
         Monster();
         void setName();
         ~Monster();
