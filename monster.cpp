@@ -12,7 +12,7 @@ Monster::Monster(){
 };
 
 //Function that is called upon to set the monster name
-void Monster::getName(){
+void Monster::setName(){
     cout << "enter the monster's name: ";
     cin >> monsterName;
 };
