@@ -31,6 +31,8 @@ int main(){
     // Damage delt this turn
     int damageTurn;
 
+    // Breaks game when option 3 is chosen
+    bool gameBreak = false;
 
     while(true){
 
@@ -75,9 +77,6 @@ int main(){
                 // Reset HP to set values
                 tempPlayerHP = playerHP;
                 tempMonsterHP = monsterHP;
-
-                // Breaks game when option 3 is chosen
-                bool gameBreak = false;
 
                 // Start Game
                 while(true){
