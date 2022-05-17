@@ -45,8 +45,10 @@ int main(){
         cout << "4. Quit Game\n" << endl;
         cin >> choice;
 
-        // Breaks game when option 3 is chosen
-        bool gameBreak = false;
+        // intput error check
+        if( choice < 1 || choice > 4){
+            cout << "\nYou need to enter a corrent number." << std::endl;
+        }
 
         // Runs different function base on user choice
         switch(choice){
@@ -78,6 +80,9 @@ int main(){
                 tempPlayerHP = playerHP;
                 tempMonsterHP = monsterHP;
 
+                // Resets gameBreak
+                gameBreak = false;
+
                 // Start Game
                 while(true){
                     
@@ -87,6 +92,11 @@ int main(){
                     cout << "2. Special Attack" << endl;
                     cout << "3. Run Away\n" << endl;
                     cin >> abilityChoice;
+
+                    // intput error check
+                    if( abilityChoice < 1 || abilityChoice > 3){
+                        cout << "\nYou need to enter a corrent number." << std::endl;
+                    }
 
                     // Deal damage or end game
                     switch(abilityChoice){
@@ -107,6 +117,7 @@ int main(){
                     if (gameBreak == true){
                         break;
                     }
+
 
                     // Display damage dealt this turn and monster HP left
                     cout << "\n"<< playerName << " dealt " << damageTurn << " dmg to Monster." << endl;
@@ -129,6 +140,9 @@ int main(){
                         cout << "\n" << playerName <<" have lost." << endl;
                         break;
                     }
+                    damageTurn = 0;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 }
                 break;
 
@@ -136,6 +150,8 @@ int main(){
                 //Exit Game
                 return 0;
         }
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
     return 0;
 }
