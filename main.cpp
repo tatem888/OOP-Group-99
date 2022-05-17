@@ -1,15 +1,16 @@
 #include <iostream>
 #include <string>
 
-// #include "player.h"
+#include "player.h"
 #include "monster.h"
 
 using namespace std;
 
 int main(){
 
+    Player p1;
     Monster m1;
-    
+
     // Exmaple Varaibles (Need to be turned into class varaible)
     // Below are default values
     string playerName = "Player";
@@ -59,7 +60,7 @@ int main(){
 
                 // Setup Player stats
                 cout << "\nPlayer Name:" << endl;
-                cin >> playerName;
+                p1.setName();
                 cout << "\nPlayer ATK:" << endl;
                 cin >> playerATK;
                 cout << "\nPlayer speical ATK:" << endl;
@@ -69,10 +70,9 @@ int main(){
                 break;
 
             case 2:
-
                 // Setup Monster stats
                 cout << "\nMonster Name:" << endl;
-                cin >> monsterATK;
+                m1.setName();
                 cout << "\nMonster ATK:" << endl;
                 cin >> monsterATK;
                 cout << "\nMonster HP:" << endl;

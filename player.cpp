@@ -10,7 +10,7 @@ Player::Player(){}
 
 //function that is called upon for the user to set a name for the player
 void Player::setName(){
-    cout << "enter the player's name: ";
+    cout << "Enter the player's name: ";
     cin >> playerName;
 }
 
@@ -32,6 +32,16 @@ void Player::setSpATK(){
     //Add while loop to check for correct input
    
 }
+
+//function that is called upon to sets the damage a normal ATK will do
+void Player::setHP(){
+    cout << "enter " << playerHP << "'s HP: ";
+    cin >> playerHP;
+
+    //Add while loop to check for correct input
+   
+}
+
 
 
 Player::~Player(){}
