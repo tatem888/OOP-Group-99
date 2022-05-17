@@ -1,16 +1,15 @@
 #include <iostream>
 #include <string>
 
-#include "player.h"
+// #include "player.h"
 #include "monster.h"
 
 using namespace std;
 
 int main(){
 
-    Monster monster1;
-    monster1.setName();
-
+    Monster m1;
+    
     // Exmaple Varaibles (Need to be turned into class varaible)
     // Below are default values
     string playerName = "Player";
@@ -37,7 +36,8 @@ int main(){
     // Breaks game when option 3 is chosen
     bool gameBreak = false;
 
-    while(true){
+    int count = 0;
+    while(count<10){
 
         // Startup Screen, allows input
         cout << "\nWelcome to <Game Title>\n" << endl;
@@ -49,9 +49,9 @@ int main(){
         cin >> choice;
 
         // intput error check
-        if( choice < 1 || choice > 4){
+        /*if( choice < 1 || choice > 4){
             cout << "\nYou need to enter a corrent number." << std::endl;
-        }
+        }*/
 
         // Runs different function base on user choice
         switch(choice){
@@ -146,8 +146,6 @@ int main(){
                         break;
                     }
                     damageTurn = 0;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 }
                 break;
 
@@ -155,8 +153,7 @@ int main(){
                 //Exit Game
                 return 0;
         }
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        count++;
     }
     return 0;
 }
