@@ -2,8 +2,6 @@
 #include <iostream>
 
 #include "monster.h"
-#include "player.h"
-
 using namespace std;
 
 

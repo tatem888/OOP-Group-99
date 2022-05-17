@@ -1,21 +1,15 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <iostream>
 #include <string>
-using namespace std;
-
 #include "stats.h"
+
+using namespace std;
 
 class Player: public Stats{
     
     public:
-
-        Player();
-        //initialies functions that will be used in the player class
-        void setName();
-        void setATK();
-        void setSpATK();
-        void setHP();
-        
-        ~Player();
 
         //initialises variables to be used in player class
         string playerName;
@@ -23,4 +17,14 @@ class Player: public Stats{
         int playerHP;
         int playerSpATK;
 
+        //initialies functions that will be used in the player class
+        Player();
+        void setName();
+        void setATK();
+        void setSpATK();
+        void setHP();
+        ~Player();
+
 };
+
+#endif

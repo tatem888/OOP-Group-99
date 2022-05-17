@@ -8,6 +8,9 @@ using namespace std;
 
 int main(){
 
+    Monster monster1;
+    monster1.setName();
+
     // Exmaple Varaibles (Need to be turned into class varaible)
     // Below are default values
     string playerName = "Player";
@@ -68,6 +71,8 @@ int main(){
             case 2:
 
                 // Setup Monster stats
+                cout << "\nMonster Name:" << endl;
+                cin >> monsterATK;
                 cout << "\nMonster ATK:" << endl;
                 cin >> monsterATK;
                 cout << "\nMonster HP:" << endl;
