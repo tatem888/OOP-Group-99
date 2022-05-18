@@ -39,21 +39,39 @@ int main(){
     // Delay time for next prompt
     int delayTime = 700000000;
 
-    // temporary solution to prevent infinite loop
-    int count = 0;
-    while(count<10){
+    int introStatus = 0;
+
+    while(true){
 
         // delay timer
         this_thread::sleep_for(chrono::nanoseconds(delayTime));
 
         // Startup Screen, allows input
-        cout << "\nWelcome to <Game Title>\n" << endl;
-        cout << "Program will use default stats,\nif Player or Monster are not manually setup.\n" << endl;
+        if(introStatus==0){
+            cout << "\nWelcome to <Game Title>\n" << endl;
+            cout << "Program will use default stats,\nif Player or Monster are not manually setup.\n" << endl;
+        }
+        if(introStatus!=0){
+            cout << endl;
+        }
         cout << "1. Setup Player" << endl;
         cout << "2. Setup Monster" << endl;
         cout << "3. Start Game" << endl;
         cout << "4. Quit Game\n" << endl;
         cin >> choice;
+
+        while(!cin){
+            cout << "Incorrect input please enter an integer" << endl;
+            cout << "\nWelcome to <Game Title>\n" << endl;
+            cout << "Program will use default stats,\nif Player or Monster are not manually setup.\n" << endl;
+            cout << "1. Setup Player" << endl;
+            cout << "2. Setup Monster" << endl;
+            cout << "3. Start Game" << endl;
+            cout << "4. Quit Game\n" << endl;
+            cin.clear();
+            cin.ignore(256,'\n');
+            cin >> choice;
+        }
 
         // intput error check
         if( choice < 1 || choice > 4){
@@ -63,7 +81,7 @@ int main(){
         // Runs different function base on user choice
         switch(choice){
             case 1:
-
+                introStatus++;
                 // Setup Player stats
                 p1.setName();
                 p1.setATK();
@@ -72,6 +90,7 @@ int main(){
                 break;
 
             case 2:
+                introStatus++;
                 // Setup Monster stats
                 m1.setName();
                 cout << "\nMonster ATK:" << endl;
@@ -81,7 +100,7 @@ int main(){
                 break;
 
             case 3:
-
+                introStatus++;
                 // Reset HP to set values
                 tempPlayerHP = p1.playerHP;
                 tempMonsterHP = monsterHP;
@@ -91,7 +110,7 @@ int main(){
 
                 // Start Game
                 while(true){
-                    
+
                     // Player choose ability
                     cout << "\nChoose a ability to be used\n" << endl;
                     cout << "1. Normal Attack" << endl;
@@ -131,7 +150,7 @@ int main(){
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
                     cout << "\n" << m1.monsterName << " has " << tempMonsterHP << " HP left." << endl;
-                    
+
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
 
                     // Win condition
@@ -139,10 +158,10 @@ int main(){
                         cout << "\n" << p1.playerName <<" have won!" << endl;
                         break;
                     }
-                    
+
                     // Monster Round
                     tempPlayerHP -= monsterATK;
-                    
+
                     // Monster Attacked damage
                     cout << "\n" << m1.monsterName << " dealt " << monsterATK << " damage to " << p1.playerName <<" ." << endl;
 
@@ -162,9 +181,9 @@ int main(){
 
             case 4:
                 //Exit Game
+                cout << "Thank you for playing." << endl;
                 return 0;
         }
-        count++;
     }
     return 0;
 }
