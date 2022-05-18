@@ -60,6 +60,7 @@ int main(){
         cout << "4. Quit Game\n" << endl;
         cin >> choice;
 
+        // Checks user input to prevent infinite loop
         while(!cin){
             cout << "Incorrect input please enter an integer" << endl;
             cout << "\nWelcome to <Game Title>\n" << endl;
@@ -71,11 +72,6 @@ int main(){
             cin.clear();
             cin.ignore(256,'\n');
             cin >> choice;
-        }
-
-        // intput error check
-        if( choice < 1 || choice > 4){
-            cout << "\nYou need to enter a corrent number." << std::endl;
         }
 
         // Runs different function base on user choice
@@ -118,9 +114,16 @@ int main(){
                     cout << "3. Run Away\n" << endl;
                     cin >> abilityChoice;
 
-                    // intput error check
-                    if( abilityChoice < 1 || abilityChoice > 3){
-                        cout << "\nYou need to enter a corrent number." << std::endl;
+                    //Checks input to prevent infinite loop
+                    while(!cin){
+                        cout << "Incorrect input, please input an integer" << endl;
+                        cout << "\nChoose a ability to be used\n" << endl;
+                        cout << "1. Normal Attack" << endl;
+                        cout << "2. Special Attack" << endl;
+                        cout << "3. Run Away\n" << endl;
+                        cin.clear();
+                        cin.ignore(256,'\n');
+                        cin >> abilityChoice;
                     }
 
                     // Deal damage or end game
@@ -163,7 +166,7 @@ int main(){
                     tempPlayerHP -= monsterATK;
 
                     // Monster Attacked damage
-                    cout << "\n" << m1.monsterName << " dealt " << monsterATK << " damage to " << p1.playerName <<" ." << endl;
+                    cout << "\n" << m1.monsterName << " dealt " << monsterATK << " damage to " << p1.playerName <<"." << endl;
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
                     // Display player HP left
