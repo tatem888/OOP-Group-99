@@ -23,6 +23,8 @@ int main(){
     // Main Menu Choice
     int choice;
 
+    string optionChoice = "";
+
     // In game menu choice
     int abilityChoice;
 
@@ -48,30 +50,43 @@ int main(){
 
         // Startup Screen, allows input
         if(introStatus==0){
-            cout << "\nWelcome to <Game Title>\n" << endl;
+            cout << "\nWelcome to Monsterous Dungeon\n" << endl;
             cout << "Program will use default stats,\nif Player or Monster are not manually setup.\n" << endl;
         }
         if(introStatus!=0){
             cout << endl;
         }
-        cout << "1. Setup Player" << endl;
-        cout << "2. Setup Monster" << endl;
-        cout << "3. Start Game" << endl;
-        cout << "4. Quit Game\n" << endl;
-        cin >> choice;
+        cout << "1. player (Player Setup)" << endl;
+        cout << "2. monster (Monster Setup)" << endl;
+        cout << "3. start (Start Game)" << endl;
+        cout << "4. quit (Stop Game)\n" << endl;
+        cout << "(player / monster / start / quit)" << endl;
+        cin >> optionChoice;
 
         // Checks user input to prevent infinite loop
-        while(!cin){
-            cout << "Incorrect input please enter an integer" << endl;
-            cout << "\nWelcome to <Game Title>\n" << endl;
-            cout << "Program will use default stats,\nif Player or Monster are not manually setup.\n" << endl;
-            cout << "1. Setup Player" << endl;
-            cout << "2. Setup Monster" << endl;
-            cout << "3. Start Game" << endl;
-            cout << "4. Quit Game\n" << endl;
+        while(optionChoice!="player" && optionChoice!="monster" && optionChoice!="start" && optionChoice!="quit"){
+            cout << "Incorrect input please enter one of the menu options.\n" << endl;
+            cout << "1. player (Player Setup)" << endl;
+            cout << "2. monster (Monster Setup)" << endl;
+            cout << "3. start (Start Game)" << endl;
+            cout << "4. quit (Stop Game)\n" << endl;
+            cout << "(player / monster / start / quit)" << endl;
             cin.clear();
             cin.ignore(256,'\n');
-            cin >> choice;
+            cin >> optionChoice;
+        }
+
+        if(optionChoice=="player"){
+            choice = 1;
+        }
+        if(optionChoice=="monster"){
+            choice = 2;
+        }
+        if(optionChoice=="start"){
+            choice = 3;
+        }
+        if(optionChoice=="quit"){
+            choice = 4;
         }
 
         // Runs different function base on user choice
@@ -137,6 +152,7 @@ int main(){
                             damageTurn = p1.playerSpATK;
                             break;
                         case 3:
+                            cout << "You ran away!" << endl;
                             gameBreak = true;
                             break;
                     }
@@ -158,7 +174,7 @@ int main(){
 
                     // Win condition
                     if (tempMonsterHP <= 0){
-                        cout << "\n" << p1.playerName <<" have won!" << endl;
+                        cout << "\n" << p1.playerName <<" has won!" << endl;
                         break;
                     }
 

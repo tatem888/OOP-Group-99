@@ -24,27 +24,42 @@ void Player::setName(){
 void Player::setATK(){
     cout << "Enter " << playerName << "'s attack power: ";
     cin >> playerATK;
-
-    //Add while loop to check for correct input
+    while(!cin){
+        cout << "Incorrect input, you must enter an integer\n" << endl;
+        cout << "Enter " << playerName << "'s attack power: ";
+        cin.clear();
+        cin.ignore(256,'\n');
+        cin >> playerATK;
+    }
 
 }
 
-//function that is called upon to sets the damage a normal ATK will do
+//function that is called upon to sets the damage a special ATK will do
 void Player::setSpATK(){
     cout << "enter " << playerName << "'s Special Attack power: ";
     cin >> playerSpATK;
+    while(!cin){
+        cout << "Incorrect input, you must enter an integer\n" << endl;
+        cout << "enter " << playerName << "'s Special Attack power: ";
+        cin.clear();
+        cin.ignore(256,'\n');
+        cin >> playerSpATK;
+    }
 
-    //Add while loop to check for correct input
-   
 }
 
-//function that is called upon to sets the damage a normal ATK will do
+//function that is called upon to sets players health points
 void Player::setHP(){
     cout << "enter " << playerName << "'s HP: ";
     cin >> playerHP;
+    while(!cin){
+        cout << "Incorrect input, you must enter an integer\n" << endl;
+        cout << "enter " << playerName << "'s HP: ";
+        cin.clear();
+        cin.ignore(256,'\n');
+        cin >> playerHP;
+    }
 
-    //Add while loop to check for correct input
-   
 }
 
 
