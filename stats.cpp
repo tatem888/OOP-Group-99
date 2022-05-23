@@ -11,6 +11,7 @@ Stats::Stats(){
 
 }
 
+// allows for entering the name
 void Stats::setName(){
     cout << "Enter name: ";
     cin >> name;
@@ -42,11 +43,6 @@ void Stats::setATK(){
         cin.ignore(256,'\n');
         cin >> ATK;
     }
-}
-
-void Stats::autoSetupM(){
-    HP = 80;
-    ATK = 20;
 }
 
 Stats::~Stats(){

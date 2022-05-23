@@ -45,9 +45,11 @@ int main(){
     // Keep track of round number
     int round = 0;
     
+    // Keep track of what have been setup
     bool playerSetup = false;
     bool monsterSetup = false;
 
+    // Loops indefinitely untill broken 
     while(true){
 
         // Startup Screen, allows input
@@ -80,32 +82,6 @@ int main(){
             cin.ignore(256,'\n');
             cin >> choice;
         }
-
-        // Checks user input to prevent infinite loop
-        /*while(optionChoice!="player" && optionChoice!="monster" && optionChoice!="start" && optionChoice!="quit"){
-            cout << "Incorrect input please enter one of the menu options.\n" << endl;
-            cout << "1. player (Player Setup)" << endl;
-            cout << "2. monster (Monster Setup)" << endl;
-            cout << "3. start (Start Game)" << endl;
-            cout << "4. quit (Stop Game)\n" << endl;
-            cout << "(player / monster / start / quit)" << endl;
-            cin.clear();
-            cin.ignore(256,'\n');
-            cin >> optionChoice;
-        }
-
-        if(optionChoice=="player"){
-            choice = 1;
-        }
-        if(optionChoice=="monster"){
-            choice = 2;
-        }
-        if(optionChoice=="start"){
-            choice = 3;
-        }
-        if(optionChoice=="quit"){
-            choice = 4;
-        }*/
 
         // Runs different function base on user choice
         switch(choice){
@@ -142,7 +118,8 @@ int main(){
 
             case 3:
                 introStatus++;
-
+                
+                // runs if monster has not been setup
                 if(monsterSetup == false){
                     // Setup Monster stats
                     cout << "\nNumber of Monsters:" << endl;
