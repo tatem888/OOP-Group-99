@@ -12,18 +12,19 @@ Stats::Stats(){
 }
 
 void Stats::setName(){
-
+    cout << "Enter name: ";
+    cin >> name;
 }
 
 
 // allows player and monster to setup HP
 void Stats::setHP(){
-    cout << "enter " << name << "'s hitpoints: ";
+    cout << "Enter HP: ";
     cin >> HP;
     //Ensures the user enters an integer
     while(!cin){
         cout << "Please enter an integer" << endl;
-        cout << "Enter " << name << "'s HP: ";
+        cout << "Enter HP: ";
         cin.clear();
         cin.ignore(256,'\n');
         cin >> HP;
@@ -31,16 +32,21 @@ void Stats::setHP(){
 }
 // allows player and monster to setup ATK
 void Stats::setATK(){
-    cout << "enter " << name << "'s power: ";
+    cout << "Enter power: ";
     cin >> ATK;
     //Ensures the user enters an integer
     while(!cin){
         cout << "Please enter an integer" << endl;
-        cout << "Enter " << name << "'s ATK: ";
+        cout << "Enter power: ";
         cin.clear();
         cin.ignore(256,'\n');
         cin >> ATK;
     }
+}
+
+void Stats::autoSetupM(){
+    HP = 80;
+    ATK = 20;
 }
 
 Stats::~Stats(){
