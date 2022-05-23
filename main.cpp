@@ -13,6 +13,7 @@ int main(){
     // Creates a player and monster object
     Player p1;
     Monster m1;
+    Monster* ms;
 
     // Exmaple Varaibles (Need to be turned into class varaible)
     // Below are default values
@@ -42,6 +43,8 @@ int main(){
     int delayTime = 700000000;
 
     int introStatus = 0;
+
+    int monsterNum;
 
     while(true){
 
@@ -103,6 +106,23 @@ int main(){
             case 2:
                 introStatus++;
                 // Setup Monster stats
+                cout << "\nNumber of Monsters:" << endl;
+                cin >> monsterNum;
+
+                ms=new Monster[monsterNum];
+
+                // initialises and sets the stats for multiple enemies
+                for(int i=0;i<monsterNum;i++){
+
+                        Monster monster;
+                        ms[i]=monster;
+
+                        ms[i].setName();
+                        ms[i].setHP();
+                        ms[i].setATK();
+
+                }
+
                 m1.setName();
                 cout << "\nMonster ATK:" << endl;
                 cin >> monsterATK;

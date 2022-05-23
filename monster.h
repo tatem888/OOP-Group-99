@@ -4,11 +4,10 @@
 #include <iostream>
 
 class Monster{
-
-    public:
+    private:
         //Initalises variables that will be inherited to child class
         string monsterName;
-        
+    public:
         Monster();
         void setName();
         ~Monster();
