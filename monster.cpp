@@ -16,6 +16,10 @@ void Monster::setName(){
     cin >> monsterName;
 };
 
+string Monster::returnName(){
+    return monsterName;
+}
+
 Monster::~Monster(){
 
 };

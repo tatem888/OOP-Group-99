@@ -120,7 +120,7 @@ int main(){
                         ms[i].setName();
                         ms[i].setHP();
                         ms[i].setATK();
-
+                    
                 }
 
                 m1.setName();
@@ -182,13 +182,14 @@ int main(){
                         break;
                     }
 
+                    string monsterName = m1.returnName();
 
                     // Display damage dealt this turn and monster HP left
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
                     cout << "\n"<< p1.playerName << " dealt " << damageTurn << " dmg to Monster." << endl;
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
-                    cout << "\n" << m1.monsterName << " has " << tempMonsterHP << " HP left." << endl;
+                    cout << "\n" << monsterName << " has " << tempMonsterHP << " HP left." << endl;
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
 
@@ -202,7 +203,7 @@ int main(){
                     tempPlayerHP -= monsterATK;
 
                     // Monster Attacked damage
-                    cout << "\n" << m1.monsterName << " dealt " << monsterATK << " damage to " << p1.playerName <<"." << endl;
+                    cout << "\n" << monsterName << " dealt " << monsterATK << " damage to " << p1.playerName <<"." << endl;
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
                     // Display player HP left
