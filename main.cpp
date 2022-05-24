@@ -18,8 +18,6 @@ int main(){
     // Main Menu Choice
     int choice;
 
-    string optionChoice = "";
-
     // In game menu choice
     int abilityChoice;
 
@@ -44,12 +42,12 @@ int main(){
 
     // Keep track of round number
     int round = 0;
-    
+
     // Keep track of what have been setup
     bool playerSetup = false;
     bool monsterSetup = false;
 
-    // Loops indefinitely untill broken 
+    // Loops indefinitely untill broken
     while(true){
 
         // Startup Screen, allows input
@@ -108,7 +106,9 @@ int main(){
 
                         Monster monster;
                         ms[i]=monster;
-
+                        if(monsterNum > 1){
+                            cout << "\nMonster " << i+1 << ": " << endl;
+                        }
                         ms[i].setHP();
                         ms[i].setATK();
 
@@ -118,7 +118,7 @@ int main(){
 
             case 3:
                 introStatus++;
-                
+
                 // runs if monster has not been setup
                 if(monsterSetup == false){
                     // Setup Monster stats
@@ -132,14 +132,13 @@ int main(){
 
                             Monster monster;
                             ms[i]=monster;
-
                             ms[i].setHP();
                             ms[i].setATK();
 
                     }
                     monsterSetup = true;
                 }
-                
+
                 // Reset HP to set values
                 tempPlayerHP = p1.playerHP;
 
@@ -179,23 +178,26 @@ int main(){
                         case 1:
 
                             // Ask for input and error checking
-                            cout << "\nWhich Monster do you want to attack? (Monster 1 is 0)"<< endl;
+                            cout << "\nWhich Monster do you want to attack?" << endl;
                             for(int i=0;i<monsterNum;i++){
                                 if(ms[i].HP > 0){
-                                    cout << "Monster " << i << " is alive." << endl;
+                                    cout << "Monster " << i+1 << " is alive." << endl;
                                 }else{
-                                    cout << "Monster " << i << " is dead." << endl;
+                                    cout << "Monster " << i+1 << " is dead." << endl;
                                 }
                             }
                             cin >> monsterChoice;
-                            while(!cin || monsterChoice >= monsterNum || monsterChoice < 0){
-                                cout << "Please enter an correct input" << endl;
-                                cout << "Which Monster do you want to attack?(Monster 1 is 0) ";
+                            while(!cin || monsterChoice > monsterNum || monsterChoice < 1){
+                                cout << "Please enter a correct input" << endl;
+                                cout << "Which Monster do you want to attack?" << endl;
                                 cin.clear();
                                 cin.ignore(256,'\n');
                                 cin >> monsterChoice;
                             }
-                            
+
+                            // Remove 1 from input to match start location for monster in monster array
+                            monsterChoice--;
+
                             // Check is monster is alive
                             if(ms[monsterChoice].HP > 0){
                                 // deals damage if it is alive
@@ -215,24 +217,27 @@ int main(){
                             if(round > 0){
                                 for(int i=0;i<monsterNum;i++){
                                     if(ms[i].HP > 0){
-                                        cout << "Monster " << i << " is alive." << endl;
+                                        cout << "Monster " << i+1 << " is alive." << endl;
                                     }else{
-                                        cout << "Monster " << i << " is dead." << endl;
+                                        cout << "Monster " << i+1 << " is dead." << endl;
                                 }
                                 }
                             }
 
                             // Ask for input and error checking
-                            cout << "Which Monster do you want to attack? (Monster 1 is 0)"<< endl;
+                            cout << "Which Monster do you want to attack?"<< endl;
                             cout << "There is " << monsterLeft << " monsters left." << endl;
                             cin >> monsterChoice;
-                            while(!cin || monsterChoice >= monsterNum || monsterChoice < 0){
+                            while(!cin || monsterChoice > monsterNum || monsterChoice < 1){
                                 cout << "Please enter an correct input" << endl;
-                                cout << "Which Monster do you want to attack? (Monster 1 is 0)";
+                                cout << "Which Monster do you want to attack?";
                                 cin.clear();
                                 cin.ignore(256,'\n');
                                 cin >> monsterChoice;
                             }
+
+                            // Remove 1 from input to match start location for monster in monster array
+                            monsterChoice--;
 
                             // Check is monster is alive
                             if(ms[monsterChoice].HP > 0){
@@ -247,7 +252,7 @@ int main(){
                             }
                             round++;
                             break;
-                            
+
                         case 3:
                             cout << "You ran away!" << endl;
                             gameBreak = true;
@@ -264,7 +269,7 @@ int main(){
 
                     // Display damage dealt this turn and monster HP left
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
-                    cout << "\n"<< p1.playerName << " dealt " << damageTurn << " dmg to Monster." << endl;
+                    cout << "\n"<< p1.playerName << " dealt " << damageTurn << " dmg to the Monster." << endl;
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
                     cout << "\nMonster " << monsterChoice << " has " << ms[monsterChoice].HP << " HP left." << endl;
@@ -273,7 +278,7 @@ int main(){
                         this_thread::sleep_for(chrono::nanoseconds(delayTime));
                         cout << "\nMonster " << monsterChoice << " is dead." << endl;
                     }
-                    
+
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
 
                     // Win condition
@@ -298,12 +303,12 @@ int main(){
                         this_thread::sleep_for(chrono::nanoseconds(delayTime));
                         //Lose condition
                         if (tempPlayerHP <= 0){
-                            cout << "\n" << p1.playerName <<" have lost." << endl;
+                            cout << "\n" << p1.playerName <<" has lost." << endl;
                             monsterSetup = false;
                             break;
                         }
                     }
-                    
+
                     damageTurn = 0;
                 }
                 break;

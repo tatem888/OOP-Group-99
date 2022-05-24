@@ -1,0 +1,148 @@
+
+Welcome to Monsterous Dungeon
+
+Please manually setup monster before starting every game.
+
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+Enter the player's name: Enter Lawrence's attack power: enter Lawrence's Special Attack power: enter Lawrence's HP: 
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+
+Number of Monsters:
+Enter HP: Enter power: 
+1. Player Setup
+2. Monster Setup
+3. Start Game
+4. Stop Game
+
+
+Round.1
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 0 is alive.
+Which Monster do you want to attack? (Monster 1 is 0)
+There is 1 monsters left.
+
+Lawrence dealt 25 dmg to Monster.
+
+Monster 0 has 75 HP left.
+
+Monster dealt 20 damage to Lawrence.
+
+Lawrence has 100 HP left.
+
+Round.2
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 0 is alive.
+Which Monster do you want to attack? (Monster 1 is 0)
+There is 1 monsters left.
+
+Lawrence dealt 25 dmg to Monster.
+
+Monster 0 has 50 HP left.
+
+Monster dealt 20 damage to Lawrence.
+
+Lawrence has 80 HP left.
+
+Round.3
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 0 is alive.
+Which Monster do you want to attack? (Monster 1 is 0)
+There is 1 monsters left.
+
+Lawrence dealt 25 dmg to Monster.
+
+Monster 0 has 25 HP left.
+
+Monster dealt 20 damage to Lawrence.
+
+Lawrence has 60 HP left.
+
+Round.4
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+
+Which Monster do you want to attack? (Monster 1 is 0)
+Monster 0 is alive.
+
+Lawrence dealt 10 dmg to Monster.
+
+Monster 0 has 15 HP left.
+
+Monster dealt 20 damage to Lawrence.
+
+Lawrence has 40 HP left.
+
+Round.5
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+
+Which Monster do you want to attack? (Monster 1 is 0)
+Monster 0 is alive.
+
+Lawrence dealt 10 dmg to Monster.
+
+Monster 0 has 5 HP left.
+
+Monster dealt 20 damage to Lawrence.
+
+Lawrence has 20 HP left.
+
+Round.6
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+
+Which Monster do you want to attack? (Monster 1 is 0)
+Monster 0 is alive.
+
+Lawrence dealt 10 dmg to Monster.
+
+Monster 0 has -5 HP left.
+
+Monster 0 is dead.
+
+Lawrence has won!
+
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+Thank you for playing.
