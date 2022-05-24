@@ -45,6 +45,10 @@ void Stats::setATK(){
     }
 }
 
+void Stats::autoSetupM(){
+
+}
+
 Stats::~Stats(){
 
 }
