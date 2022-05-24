@@ -1,0 +1,130 @@
+
+Welcome to Monsterous Dungeon
+
+Please manually setup monster before starting every game.
+
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+
+Number of Monsters:
+
+Monster 1: 
+Enter HP: Enter power: 
+Monster 2: 
+Enter HP: Enter power: 
+1. Player Setup
+2. Monster Setup
+3. Start Game
+4. Stop Game
+
+
+Round.1
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 1 is alive.
+Monster 2 is alive.
+Which Monster do you want to attack?
+There is 2 monsters left.
+
+Player dealt 60 dmg to the Monster.
+
+Monster 0 has 40 HP left.
+
+Monster dealt 10 damage to Player.
+
+Player has 90 HP left.
+
+Round.2
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 1 is alive.
+Monster 2 is alive.
+Which Monster do you want to attack?
+There is 2 monsters left.
+
+Player dealt 60 dmg to the Monster.
+
+Monster 1 has 40 HP left.
+
+Monster dealt 10 damage to Player.
+
+Player has 80 HP left.
+
+Round.3
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+
+Which Monster do you want to attack?
+Monster 1 is alive.
+Monster 2 is alive.
+
+Player dealt 30 dmg to the Monster.
+
+Monster 0 has 10 HP left.
+
+Monster dealt 10 damage to Player.
+
+Player has 70 HP left.
+
+Round.4
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+
+Which Monster do you want to attack?
+Monster 1 is alive.
+Monster 2 is alive.
+
+Player dealt 30 dmg to the Monster.
+
+Monster 0 has -20 HP left.
+
+Monster 0 is dead.
+
+Round.5
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 1 is dead.
+Monster 2 is alive.
+Which Monster do you want to attack?
+There is 1 monsters left.
+
+Player dealt 60 dmg to the Monster.
+
+Monster 1 has -20 HP left.
+
+Monster 1 is dead.
+
+Player has won!
+
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+Thank you for playing.

@@ -1,0 +1,66 @@
+
+Welcome to Monsterous Dungeon
+
+Please manually setup monster before starting every game.
+
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+Enter the player's name: Enter Harrison's attack power: enter Harrison's Special Attack power: enter Harrison's HP:
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+
+Number of Monsters:
+
+Monster 1:
+Enter HP: Enter power:
+Monster 2:
+Enter HP: Enter power:
+Monster 3:
+Enter HP: Enter power:
+1. Player Setup
+2. Monster Setup
+3. Start Game
+4. Stop Game
+
+
+Round.1
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+Monster 1 is alive.
+Monster 2 is alive.
+Monster 3 is alive.
+Which Monster do you want to attack?
+There is 3 monsters left.
+
+Harrison dealt 40 dmg to the Monster.
+
+Monster 0 has 10 HP left.
+
+Monster dealt 50 damage to Harrison.
+
+Harrison has 150 HP left.
+
+Round.2
+
+Choose a ability to be used
+
+1. Normal Attack
+2. Special Attack
+3. Run Away
+
+You ran away!
+
+1. Player Setup
+2. Monster Setup
+4. Stop Game
+
+Thank you for playing.

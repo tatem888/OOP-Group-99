@@ -132,6 +132,9 @@ int main(){
 
                             Monster monster;
                             ms[i]=monster;
+                            if(monsterNum > 1){
+                                cout << "\nMonster " << i+1 << ": " << endl;
+                            }
                             ms[i].setHP();
                             ms[i].setATK();
 
@@ -272,11 +275,11 @@ int main(){
                     cout << "\n"<< p1.playerName << " dealt " << damageTurn << " dmg to the Monster." << endl;
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
-                    cout << "\nMonster " << monsterChoice << " has " << ms[monsterChoice].HP << " HP left." << endl;
+                    cout << "\nMonster " << monsterChoice+1 << " has " << ms[monsterChoice].HP << " HP left." << endl;
 
                     if(ms[monsterChoice].HP <= 0){
                         this_thread::sleep_for(chrono::nanoseconds(delayTime));
-                        cout << "\nMonster " << monsterChoice << " is dead." << endl;
+                        cout << "\nMonster " << monsterChoice+1 << " is dead." << endl;
                     }
 
                     this_thread::sleep_for(chrono::nanoseconds(delayTime));
