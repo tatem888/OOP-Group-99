@@ -14,8 +14,6 @@ int main(){
     Player p1;
     Monster* ms;
 
-    string playerName;
-
     // UI Varaibles Do not change
     // Main Menu Choice
     int choice;
