@@ -13,8 +13,7 @@ Stats::Stats(){
 
 // allows for entering the name
 void Stats::setName(){
-    cout << "Enter name: ";
-    cin >> name;
+
 }
 
 
