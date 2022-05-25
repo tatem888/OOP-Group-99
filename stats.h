@@ -17,7 +17,6 @@ class Stats{
         virtual void setName();
         virtual void setHP();
         virtual void setATK();
-        virtual void autoSetupM();
 
         ~Stats();
 };
