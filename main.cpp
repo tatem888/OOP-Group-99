@@ -14,6 +14,8 @@ int main(){
     Player p1;
     Monster* ms;
 
+    string playerName;
+
     // UI Varaibles Do not change
     // Main Menu Choice
     int choice;
@@ -80,6 +82,9 @@ int main(){
             cin.ignore(256,'\n');
             cin >> choice;
         }
+
+        cin.clear();
+        cin.ignore(256,'\n');
 
         // Runs different function base on user choice
         switch(choice){
