@@ -327,7 +327,6 @@ int main(){
                 return 0;
         }
     }
-    delete[] ms;
     delete ms;
     return 0;
 }
